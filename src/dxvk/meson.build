@@ -109,6 +109,7 @@ dxvk_src = files([
   'dxvk_util.cpp',
 
   'platform/dxvk_win32_exts.cpp',
+  'platform/dxvk_win32_api.cpp',
 
   'hud/dxvk_hud.cpp',
   'hud/dxvk_hud_font.cpp',
