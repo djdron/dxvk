@@ -54,7 +54,7 @@ add_project_arguments(cc.get_supported_arguments(compiler_args), language: 'c')
 add_project_link_arguments(cpp.get_supported_link_arguments(link_args), language: 'cpp')
 add_project_link_arguments(cc.get_supported_link_arguments(link_args), language: 'c')
 
-dxvk_include_path = include_directories('./include')
+dxvk_include_path = include_directories('./include', './include_mingw')
 
 if (cpu_family == 'x86_64')
   dxvk_library_path = meson.source_root() + '/lib'
@@ -64,17 +64,17 @@ endif
 
 dxvk_extradep = [ ]
 
-lib_vulkan  = cpp.find_library('vulkan-1', dirs : dxvk_library_path)
-lib_d3d9    = cpp.find_library('d3d9')
-lib_d3d11   = cpp.find_library('d3d11')
-lib_dxgi    = cpp.find_library('dxgi')
-lib_d3dcompiler_43 = cpp.find_library('d3dcompiler_43', dirs : dxvk_library_path)
+lib_vulkan  = cpp.find_library('libvulkan')
+#lib_d3d9    = cpp.find_library('d3d9')
+#lib_d3d11   = cpp.find_library('d3d11')
+#lib_dxgi    = cpp.find_library('dxgi')
+#lib_d3dcompiler_43 = cpp.find_library('d3dcompiler_43', dirs : dxvk_library_path)
 
-if dxvk_is_msvc
-  lib_d3dcompiler_47 = cpp.find_library('d3dcompiler')
-else
-  lib_d3dcompiler_47 = cpp.find_library('d3dcompiler_47')
-endif
+#if dxvk_is_msvc
+#  lib_d3dcompiler_47 = cpp.find_library('d3dcompiler')
+#else
+#  lib_d3dcompiler_47 = cpp.find_library('d3dcompiler_47')
+#endif
 
 exe_ext = ''
 dll_ext = ''
@@ -99,12 +99,12 @@ if dxvk_is_msvc
     arguments : [ '/fo', '@OUTPUT@', '@INPUT@' ],
   )
 else
-  res_ext = '.o'
-  wrc = find_program('windres')
-  wrc_generator = generator(wrc,
-    output    : [ '@BASENAME@' + res_ext ],
-    arguments : [ '-i', '@INPUT@', '-o', '@OUTPUT@' ],
-  )
+#  res_ext = '.o'
+#  wrc = find_program('windres')
+#  wrc_generator = generator(wrc,
+#    output    : [ '@BASENAME@' + res_ext ],
+#    arguments : [ '-i', '@INPUT@', '-o', '@OUTPUT@' ],
+#  )
 endif
 
 dxvk_version = vcs_tag(

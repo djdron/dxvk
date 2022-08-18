@@ -1,4 +1,4 @@
-dxgi_res = wrc_generator.process('version.rc')
+#dxgi_res = wrc_generator.process('version.rc')
 
 dxgi_src = [
   'dxgi_adapter.cpp',
@@ -12,7 +12,8 @@ dxgi_src = [
   'dxgi_swapchain.cpp',
 ]
 
-dxgi_dll = shared_library('dxgi'+dll_ext, dxgi_src, dxgi_res,
+dxgi_dll = shared_library('dxgi'+dll_ext, dxgi_src,
+# dxgi_res,
   name_prefix         : '',
   dependencies        : [ dxvk_dep ],
   include_directories : dxvk_include_path,

@@ -1,4 +1,4 @@
-d3d11_res = wrc_generator.process('version.rc')
+#d3d11_res = wrc_generator.process('version.rc')
 
 dxgi_common_src = [
   '../dxgi/dxgi_format.cpp',
@@ -67,9 +67,10 @@ d3d11_shaders = files([
 ])
 
 d3d11_dll = shared_library('d3d11'+dll_ext, dxgi_common_src + d3d11_src + d3d10_src,
-    glsl_generator.process(d3d11_shaders), d3d11_res,
+    glsl_generator.process(d3d11_shaders),
+# d3d11_res,
   name_prefix         : '',
-  dependencies        : [ lib_dxgi, dxbc_dep, dxvk_dep ],
+  dependencies        : [ dxbc_dep, dxvk_dep ],
   include_directories : dxvk_include_path,
   install             : true,
   vs_module_defs      : 'd3d11'+def_spec_ext,
