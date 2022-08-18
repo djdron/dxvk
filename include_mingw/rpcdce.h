@@ -25,7 +25,7 @@ extern "C" {
 #endif
 
 #ifndef DECLSPEC_NORETURN
-#define DECLSPEC_NORETURN __declspec(noreturn)
+#define DECLSPEC_NORETURN//__declspec(noreturn)
 #endif
 
 #include <specstrings.h>

@@ -45,6 +45,7 @@ namespace dxvk {
     if (hSharedHandle == nullptr)
       hSharedHandle = INVALID_HANDLE_VALUE;
 
+#ifdef _WIN32
     if (m_desc.MiscFlags & (D3D11_RESOURCE_MISC_SHARED|D3D11_RESOURCE_MISC_SHARED_NTHANDLE)) {
       if (m_desc.MiscFlags & D3D11_RESOURCE_MISC_SHARED_KEYEDMUTEX)
         Logger::warn("D3D11_RESOURCE_MISC_SHARED_KEYEDMUTEX: not supported.");
@@ -56,6 +57,7 @@ namespace dxvk {
         : VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT;
       imageInfo.sharing.handle = hSharedHandle;
     }
+#endif
 
     if (!pDevice->GetOptions()->disableMsaa)
       DecodeSampleCount(m_desc.SampleDesc.Count, &imageInfo.sampleCount);

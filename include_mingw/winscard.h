@@ -31,7 +31,7 @@ extern "C" {
 #define WINSCARDAPI
 #endif
 #ifndef WINSCARDDATA
-#define WINSCARDDATA __declspec(dllimport)
+#define WINSCARDDATA// __declspec(dllimport)
 #endif
 
   WINSCARDDATA extern const SCARD_IO_REQUEST g_rgSCardT0Pci,g_rgSCardT1Pci,g_rgSCardRawPci;

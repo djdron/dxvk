@@ -8,6 +8,7 @@
 #define _INC_CORECRT
 
 #include <_mingw.h>
+#include <stddef.h>
 
 #ifndef __WIDL__
 #undef _CRT_PACKING
@@ -39,7 +40,7 @@ typedef int errcode;
 #ifdef _WIN64
 __MINGW_EXTENSION typedef unsigned __int64 size_t;
 #else
-typedef unsigned int size_t;
+//typedef unsigned int size_t;
 #endif /* _WIN64 */
 #endif /* _SIZE_T_DEFINED */
 
@@ -49,7 +50,7 @@ typedef unsigned int size_t;
 #ifdef _WIN64
 __MINGW_EXTENSION typedef __int64 ssize_t;
 #else
-typedef int ssize_t;
+//typedef int ssize_t;
 #endif /* _WIN64 */
 #endif /* _SSIZE_T_DEFINED */
 
@@ -79,7 +80,7 @@ typedef int intptr_t;
 #ifdef _WIN64
 __MINGW_EXTENSION typedef unsigned __int64 uintptr_t;
 #else
-typedef unsigned int uintptr_t;
+//typedef unsigned int uintptr_t;
 #endif /* _WIN64 */
 #endif /* __uintptr_t_defined */
 #endif /* _UINTPTR_T_DEFINED */
@@ -107,9 +108,9 @@ typedef unsigned short wchar_t;
 #ifndef _WCTYPE_T_DEFINED
 #define _WCTYPE_T_DEFINED
 #ifndef _WINT_T
-#define _WINT_T
-typedef unsigned short wint_t;
-typedef unsigned short wctype_t;
+//#define _WINT_T
+//typedef unsigned short wint_t;
+//typedef unsigned short wctype_t;
 #endif /* _WINT_T */
 #endif /* _WCTYPE_T_DEFINED */
 
@@ -140,7 +141,7 @@ __MINGW_EXTENSION typedef __int64 __time64_t;
 #ifdef _USE_32BIT_TIME_T
 typedef __time32_t time_t;
 #else
-typedef __time64_t time_t;
+//typedef __time64_t time_t;
 #endif
 #endif /* _TIME_T_DEFINED */
 

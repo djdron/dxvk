@@ -42,6 +42,14 @@ extern "C" {
 extern RPC_IF_HANDLE IWinTypesBase_v0_1_c_ifspec;
 extern RPC_IF_HANDLE IWinTypesBase_v0_1_s_ifspec;
 
+typedef unsigned char byte;
+
+#ifndef _HYPER_DEFINED
+#define _HYPER_DEFINED
+#define hyper /* __MINGW_EXTENSION */ __int64
+#define MIDL_uhyper /* __MINGW_EXTENSION */ unsigned __int64
+#endif
+
 #if 0
 typedef byte BYTE;
 typedef unsigned short WORD;
@@ -374,7 +382,7 @@ typedef struct _HYPER_SIZEDARR {
 #endif  /* __IWinTypesBase_INTERFACE_DEFINED__ */
 
 
-typedef boolean BOOLEAN;
+//typedef boolean BOOLEAN;
 #ifndef _tagBLOB_DEFINED
 #define _tagBLOB_DEFINED
 #define _BLOB_DEFINED

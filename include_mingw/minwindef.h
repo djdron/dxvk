@@ -84,7 +84,7 @@ extern "C" {
 #endif
 
 #ifndef CALLBACK
-#if defined(_ARM_)
+#if 1//defined(_ARM_)
 #define CALLBACK
 #else
 #define CALLBACK __stdcall
@@ -92,7 +92,7 @@ extern "C" {
 #endif
 
 #ifndef WINAPI
-#if defined(_ARM_)
+#if 1//defined(_ARM_)
 #define WINAPI
 #else
 #define WINAPI __stdcall

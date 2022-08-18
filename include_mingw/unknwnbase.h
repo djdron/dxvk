@@ -16,6 +16,8 @@
 #ifndef __unknwnbase_h__
 #define __unknwnbase_h__
 
+#define __stdcall
+
 /* Forward declarations */
 
 #ifndef __IUnknown_FWD_DEFINED__

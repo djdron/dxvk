@@ -3,7 +3,7 @@
  * This file is part of the mingw-w64 runtime package.
  * No warranty is given; refer to the file DISCLAIMER.PD within this package.
  */
-#ifndef _WINSOCKAPI_
+#if 0//ndef _WINSOCKAPI_
 #define _WINSOCKAPI_
 
 #ifndef _INC_WINDOWS

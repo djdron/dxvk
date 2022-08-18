@@ -3123,7 +3123,7 @@ extern "C++" {
 #endif
   }
 
-#if defined (_WIN64) || ((_WIN32_WINNT >= 0x0502) && defined (_WINBASE_))
+#if 0//defined (_WIN64) || ((_WIN32_WINNT >= 0x0502) && defined (_WINBASE_))
   FORCEINLINE unsigned __int64 InterlockedIncrement (unsigned __int64 volatile *Addend) {
     return (unsigned __int64) InterlockedIncrement64 ((volatile __int64 *) Addend);
   }
@@ -3141,7 +3141,7 @@ extern "C++" {
 #endif
   }
 
-#if defined (_WIN64) || ((_WIN32_WINNT >= 0x0502) && defined (_WINBASE_))
+#if 0//defined (_WIN64) || ((_WIN32_WINNT >= 0x0502) && defined (_WINBASE_))
   FORCEINLINE unsigned __int64 InterlockedDecrement (unsigned __int64 volatile *Addend) {
     return (unsigned __int64) InterlockedDecrement64 ((volatile __int64 *) Addend);
   }
@@ -3159,7 +3159,7 @@ extern "C++" {
 #endif
   }
 
-#if defined (_WIN64) || ((_WIN32_WINNT >= 0x0502) && defined (_WINBASE_))
+#if 0//defined (_WIN64) || ((_WIN32_WINNT >= 0x0502) && defined (_WINBASE_))
   FORCEINLINE unsigned __int64 InterlockedExchange (unsigned __int64 volatile *Target, unsigned __int64 Value) {
     return (unsigned __int64) InterlockedExchange64 ((volatile __int64 *) Target,(__int64) Value);
   }
@@ -3189,7 +3189,7 @@ extern "C++" {
 #endif
   }
 
-#if defined (_WIN64) || ((_WIN32_WINNT >= 0x0502) && defined (_WINBASE_))
+#if 0//defined (_WIN64) || ((_WIN32_WINNT >= 0x0502) && defined (_WINBASE_))
   FORCEINLINE unsigned __int64 InterlockedExchangeAdd (unsigned __int64 volatile *Addend, unsigned __int64 Value) {
     return (unsigned __int64) InterlockedExchangeAdd64 ((volatile __int64 *) Addend,(__int64) Value);
   }
@@ -3211,7 +3211,7 @@ extern "C++" {
 #endif
   }
 
-#if defined (_WIN64) || ((_WIN32_WINNT >= 0x0502) && defined (_WINBASE_))
+#if 0//defined (_WIN64) || ((_WIN32_WINNT >= 0x0502) && defined (_WINBASE_))
   FORCEINLINE unsigned __int64 InterlockedCompareExchange (unsigned __int64 volatile *Destination, unsigned __int64 Exchange, unsigned __int64 Comperand) {
     return (unsigned __int64) InterlockedCompareExchange64 ((volatile __int64 *) Destination,(__int64) Exchange,(__int64) Comperand);
   }

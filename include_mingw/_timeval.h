@@ -4,7 +4,7 @@
  * No warranty is given; refer to the file DISCLAIMER.PD within this package.
  */
 
-#ifndef _TIMEVAL_DEFINED
+#if 0//ndef _TIMEVAL_DEFINED
 #define _TIMEVAL_DEFINED
 
 struct timeval

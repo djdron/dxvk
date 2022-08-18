@@ -4,7 +4,7 @@
  * No warranty is given; refer to the file DISCLAIMER.PD within this package.
  */
 
-#ifndef ___WSA_FD_TYPES_H
+#if 0//ndef ___WSA_FD_TYPES_H
 #define ___WSA_FD_TYPES_H
 
 #include <psdk_inc/_socket_types.h>

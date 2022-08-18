@@ -186,7 +186,7 @@ namespace dxvk {
 
     void createWriter();
 
-    std::wstring getCacheFileName() const;
+    std::string getCacheFileName() const;
     
     std::string getCacheDir() const;
 

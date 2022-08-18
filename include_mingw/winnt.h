@@ -150,7 +150,7 @@ extern "C" {
 #include <basetsd.h>
 
 #ifndef DECLSPEC_IMPORT
-#if (defined (__i386__) || defined (__ia64__) || defined (__x86_64__) || defined (__arm__) || defined(__aarch64__)) && !defined (__WIDL__)
+#if 0//(defined (__i386__) || defined (__ia64__) || defined (__x86_64__) || defined (__arm__) || defined(__aarch64__)) && !defined (__WIDL__)
 #define DECLSPEC_IMPORT __declspec (dllimport)
 #else
 #define DECLSPEC_IMPORT
@@ -158,7 +158,7 @@ extern "C" {
 #endif
 
 #ifndef DECLSPEC_NORETURN
-#ifndef __WIDL__
+#if 0//ndef __WIDL__
 #define DECLSPEC_NORETURN __declspec (noreturn)
 #else
 #define DECLSPEC_NORETURN
@@ -166,7 +166,7 @@ extern "C" {
 #endif
 
 #ifndef DECLSPEC_NOTHROW
-#ifndef __WIDL__
+#if 0//ndef __WIDL__
 #define DECLSPEC_NOTHROW __declspec (nothrow)
 #else
 #define DECLSPEC_NOTHROW
@@ -208,7 +208,7 @@ extern "C" {
 #endif
 
 #ifndef DECLSPEC_SELECTANY
-#define DECLSPEC_SELECTANY __declspec(selectany)
+#define DECLSPEC_SELECTANY// __declspec(selectany)
 #endif
 
 #ifndef NOP_FUNCTION
@@ -265,7 +265,7 @@ extern "C" {
 #endif
 #endif /* FASTCALL */
 
-#if defined(_ARM_) || defined(_ARM64_)
+#if 1//defined(_ARM_) || defined(_ARM64_)
 #define NTAPI
 #else
 #define NTAPI __stdcall

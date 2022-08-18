@@ -992,7 +992,9 @@ namespace dxvk {
 
       for (uint32_t i = 0; i < numWorkers; i++) {
         m_workerThreads.emplace_back([this] () { workerFunc(); });
+#ifdef _WIN32
         m_workerThreads[i].set_priority(ThreadPriority::Lowest);
+#endif//
       }
     }
   }
@@ -1004,7 +1006,7 @@ namespace dxvk {
   }
 
 
-  std::wstring DxvkStateCache::getCacheFileName() const {
+  std::string DxvkStateCache::getCacheFileName() const {
     std::string path = getCacheDir();
 
     if (!path.empty() && *path.rbegin() != '/')
@@ -1012,7 +1014,7 @@ namespace dxvk {
     
     std::string exeName = env::getExeBaseName();
     path += exeName + ".dxvk-cache";
-    return str::tows(path.c_str());
+    return path;
   }
 
 

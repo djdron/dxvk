@@ -13,12 +13,14 @@ namespace dxvk {
     fenceInfo.initialValue = InitialValue;
     m_flags = Flags;
 
+#ifdef _WIN32
     if (Flags & D3D11_FENCE_FLAG_SHARED) {
       fenceInfo.sharedType = VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_D3D11_FENCE_BIT;
       if (hFence == nullptr)
         hFence = INVALID_HANDLE_VALUE;
       fenceInfo.sharedHandle = hFence;
     }
+#endif
 
     if (Flags & ~D3D11_FENCE_FLAG_SHARED)
       Logger::err(str::format("Fence flags 0x", std::hex, Flags, " not supported"));

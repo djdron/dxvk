@@ -7,6 +7,8 @@
 #ifndef _INC__MINGW_H
 #define _INC__MINGW_H
 
+#define __cdecl
+
 #include "_mingw_mac.h"
 #include "_mingw_secapi.h"
 
@@ -239,7 +241,7 @@ limitations in handling dllimport attribute.  */
 #define __int8 char
 #define __int16 short
 #define __int32 int
-#define __int64 long long
+#define __int64 long int
 #ifdef _WIN64
 #if (__clang_major__ > 3 || (__clang_major__ == 3 && __clang_minor__ >= 1)) && \
     !defined(__SIZEOF_INT128__) /* clang >= 3.1 has __int128 but no size macro */
